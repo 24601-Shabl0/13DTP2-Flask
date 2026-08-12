@@ -1,4 +1,7 @@
-from flask import Flask 
+from flask import Flask, g
+
+DATABASE = 'database.db'
+
 
 app = Flask(__name__)
 
