@@ -38,7 +38,9 @@ def home():
 @app.route("/car/<int:id>")
 def car(id):
     #just one car based on the id
-    pass
+    sql = """ SELECT * FROM cars 
+    JOIN Makers ON Makers.MakerID=cars.MakerID
+    WHERE cars.carid = 8;"""
 
 if __name__ == "__main__":
     app.run(debug=True)
