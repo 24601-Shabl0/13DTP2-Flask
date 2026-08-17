@@ -1,0 +1,3 @@
+-- database: c:\Users\risha\OneDrive\Desktop\Digital tech\13DTP2 Flask\database.db
+
+SELECT * FROM cars;
