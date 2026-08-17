@@ -1,3 +1,13 @@
 -- database: c:\Users\risha\OneDrive\Desktop\Digital tech\13DTP2 Flask\database.db
 
 SELECT * FROM cars;
+
+--just id, maker, model and imageURL
+SELECT cars.carid,Makers.Name,cars.model,cars.imageURL 
+FROM cars 
+JOIN Makers ON cars.MakerID = Makers.MakerID;
+
+--just one car based on the id
+SELECT * FROM cars 
+JOIN Makers ON Makers.MakerID=cars.MakerID
+WHERE cars.carid = 8;
