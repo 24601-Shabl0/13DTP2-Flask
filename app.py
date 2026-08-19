@@ -40,7 +40,9 @@ def car(id):
     #just one car based on the id
     sql = """ SELECT * FROM cars 
     JOIN Makers ON Makers.MakerID=cars.MakerID
-    WHERE cars.carid = 8;"""
+    WHERE cars.carid = ?;"""
+    result = query_db(sql, (id,),True)
+    return str(result)
 
 if __name__ == "__main__":
     app.run(debug=True)
