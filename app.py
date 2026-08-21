@@ -1,4 +1,4 @@
-from flask import Flask, g
+from flask import Flask, g, render_template
 import sqlite3 
 
 DATABASE = 'database.db'
@@ -33,16 +33,16 @@ def home():
               FROM cars 
               JOIN Makers ON cars.MakerID = Makers.MakerID;"""
     results = query_db(sql)
-    return str(results)
+    return render_template("home.html" ,results=results)
 
 @app.route("/car/<int:id>")
-def car(id):
+def car(id):    
     #just one car based on the id
     sql = """ SELECT * FROM cars 
     JOIN Makers ON Makers.MakerID=cars.MakerID
     WHERE cars.carid = ?;"""
     result = query_db(sql, (id,),True)
-    return str(result)
+    return render_template("car.html", car=result)
 
 if __name__ == "__main__":
     app.run(debug=True)

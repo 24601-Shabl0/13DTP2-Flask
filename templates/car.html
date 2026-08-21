@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Just one car -->
+ <!-- two column grid -->
+  <div class="two-column">
+      <!-- image om left -->
+       <img src="{{ car[7] }}" alt="{{ car[2] }}">
+       <!-- info panel -->
+       <div class="info">
+              <h1>  Model: {{ car[2] }}</h1>
+              <h1>Top Speed: {{ car[4] }} mph</h1>
+              <h1>Cost: ${{ car[3] }}</h1>
+              <h1>  Acceleration: {{ car[5] }} sec</h1>
+              <h1>Description</h1>
+                <h1>{{ car[6] }}</h1>
+
+       </div>
+    <div>
+    {% endblock %}
