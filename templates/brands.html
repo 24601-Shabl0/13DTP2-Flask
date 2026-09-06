@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+<h1>Car Brands</h1>
+
+
+ <div class="three-column">
+    {% for brand in brands %}
+        <a href="{{ url_for('brand_cars', brand_name=brand[0]) }}">
+            {{ brand[0] }}
+        </a>
+    {% endfor %} 
+    </div>
+{% block body %}

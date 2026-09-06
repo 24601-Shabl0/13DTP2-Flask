@@ -16,7 +16,15 @@
     <!-- Shared Navbar -->
     <nav class="w3-bar w3-blue-grey">
         <a href="/" class="w3-bar-item w3-button">Home</a>
+        
+        {% for brand in nav_brands %}
+            <a href="{{ url_for('brand_cars', brand_name=brand[0]) }}"
+               class="w3-bar-item w3-button">
+                {{ brand[0] }}
+            </a>
+        {% endfor %}
     </nav>
+    
     {% block body %}
     {% endblock %}
 </body>
